@@ -1,3 +1,44 @@
+
+<script>
+import { useAppStore } from '@/stores/app'
+import CharacterCard from '@/components/CharacterCard.vue'
+
+export default {
+  components: { CharacterCard },
+  setup() {
+    const store = useAppStore()
+
+    const fetchCharacters = (house) => {
+      store.fetchCharacters(house)
+    }
+
+    return {
+      store,
+      fetchCharacters
+    }
+  }
+}
+</script>
+
+<style scoped>
+.hp-font {
+  font-family: 'Harry Potter';
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+.house-img {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.house-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+</style>
+
+
 <template>
   <transition name="fade" mode="out-in">
     <v-container class="fill-height">
@@ -43,42 +84,3 @@
     </v-container>
   </transition>
 </template>
-
-<script>
-import { useAppStore } from '@/stores/app'
-import CharacterCard from '@/components/CharacterCard.vue'
-
-export default {
-  components: { CharacterCard },
-  setup() {
-    const store = useAppStore()
-
-    const fetchCharacters = (house) => {
-      store.fetchCharacters(house)
-    }
-
-    return {
-      store,
-      fetchCharacters
-    }
-  }
-}
-</script>
-
-<style scoped>
-.hp-font {
-  font-family: 'Harry Potter';
-  font-size: 1.5rem;
-  text-shadow: 2px 2px 5px rgb(0, 0, 0);
-}
-
-.house-img {
-  cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.house-img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-</style>

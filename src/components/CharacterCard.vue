@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 .card {
-  max-width: 200px; /* Reduced width */
+  max-width: 200px;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -52,7 +52,7 @@ export default {
 
 .text-shadow {
   font-family: 'Harry Potter';
-  font-size: 1rem; /* Slightly smaller */
+  font-size: 1rem; 
   text-align: center;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
